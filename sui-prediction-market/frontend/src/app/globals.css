@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --foreground-rgb: 26, 26, 26;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 245, 245, 245;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      135deg,
+      rgb(var(--background-start-rgb)) 0%,
+      rgb(250, 250, 250) 50%,
+      rgb(var(--background-end-rgb)) 100%
+    );
+  min-height: 100vh;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #AAAAAA;
+}
+
+/* Smooth animations */
+* {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Arena card style */
+.arena-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.2s;
+}
+
+.arena-card:hover {
+  border-color: #CCCCCC;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Button styles */
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #000000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #F5F5F5;
+  border-color: #CCCCCC;
+}
+
+/* Sui Wallet Connect Button Customization */
+[data-testid="connect-button"],
+button[class*="ConnectButton"] {
+  height: 32px !important;
+  padding: 0 14px !important;
+  background-color: #1A1A1A !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  box-shadow: none !important;
+}
+
+[data-testid="connect-button"]:hover,
+button[class*="ConnectButton"]:hover {
+  background-color: #000000 !important;
+  transform: scale(1.02);
+}
+
+/* Connected Wallet Account Button */
+button[class*="AccountDropdownMenu"],
+div[class*="AccountDropdownMenu"] button {
+  height: 32px !important;
+  padding: 0 12px !important;
+  background-color: #F5F5F5 !important;
+  color: #1A1A1A !important;
+  border: 1px solid #E5E5E5 !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+button[class*="AccountDropdownMenu"]:hover,
+div[class*="AccountDropdownMenu"] button:hover {
+  background-color: #ECECEC !important;
+  border-color: #D1D1D1 !important;
+}
+
+/* Wallet Modal Styling */
+div[role="dialog"] {
+  border-radius: 16px !important;
+}
+
+div[role="dialog"] h2 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #1A1A1A !important;
+}
+
+/* Wallet List Items */
+div[role="dialog"] button {
+  border-radius: 10px !important;
+  transition: all 0.2s ease !important;
+}
+
+div[role="dialog"] button:hover {
+  background-color: #F5F5F5 !important;
+}
