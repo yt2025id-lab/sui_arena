@@ -1,6 +1,9 @@
-# 🎯 Sui Prediction Market
+# 🎯 Sui Arena - Prediction Market Platform
 
-A decentralized prediction market platform built on Sui blockchain, inspired by Polymarket. Users can create and trade on binary outcome markets (Yes/No) with an automated market maker (AMM) system.
+A gamified decentralized prediction market platform built on Sui blockchain, inspired by Polymarket. Users can create and trade on binary outcome markets (Yes/No) with an automated market maker (AMM) system.
+
+🌐 **Live Demo**: [Coming Soon]
+📦 **GitHub**: https://github.com/yt2025id-lab/sui_arena
 
 ## 🌟 Features
 
@@ -23,6 +26,24 @@ A decentralized prediction market platform built on Sui blockchain, inspired by 
 - Calculate profit & loss (P&L)
 - Market statistics (volume, participants, expiry)
 
+#### 3. Gamification - Arena System
+- XP and leveling system for traders
+- Daily and weekly quests
+- Achievement badges
+- Leaderboard rankings
+- Streak tracking
+- Trading challenges
+
+#### 4. Modern UI/UX
+- **Animated Landing Page**:
+  - 3D arrow animations in "How It Works" section
+  - Marvel-style SUI logo animation on hover
+  - Smooth transitions and effects
+- Responsive design for all devices
+- Dark mode optimized
+- Real-time market updates
+- Interactive charts and statistics
+
 ## 🏗️ Architecture
 
 ```
@@ -34,7 +55,25 @@ sui-prediction-market/
 │       │   └── amm.move           # AMM trading logic
 │       ├── tests/
 │       └── Move.toml
-├── frontend/                       # Next.js frontend (coming soon)
+├── frontend/                       # Next.js 14 + TypeScript frontend
+│   ├── src/
+│   │   ├── app/                   # App router pages
+│   │   │   ├── page.tsx           # Landing page with animations
+│   │   │   ├── arena/             # Arena & gamification
+│   │   │   ├── markets/           # Browse markets
+│   │   │   ├── market/[id]/       # Market detail
+│   │   │   ├── create/            # Create market
+│   │   │   ├── portfolio/         # User portfolio
+│   │   │   └── leaderboard/       # Rankings
+│   │   ├── components/            # Reusable components
+│   │   │   ├── Header.tsx
+│   │   │   ├── MarketCard.tsx
+│   │   │   └── arena/             # Arena components
+│   │   ├── lib/                   # Utilities
+│   │   ├── types/                 # TypeScript types
+│   │   └── config/                # Configuration
+│   ├── package.json
+│   └── tailwind.config.ts
 └── docs/                          # Documentation
 ```
 
@@ -84,7 +123,8 @@ price = (pool / total_pool) * 10000
 ### Prerequisites
 - [Sui CLI](https://docs.sui.io/build/install) installed
 - Node.js 18+ (for frontend)
-- A Sui wallet (for testnet/mainnet deployment)
+- npm or yarn package manager
+- A Sui wallet (Sui Wallet browser extension recommended)
 
 ### Smart Contract Deployment
 
@@ -109,6 +149,36 @@ sui client publish --gas-budget 100000000
 ```
 
 5. Save the package ID and object IDs from deployment output.
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+```bash
+cd frontend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create `.env.local` file:
+```bash
+cp .env.example .env.local
+```
+
+4. Update environment variables:
+```env
+NEXT_PUBLIC_NETWORK=testnet
+NEXT_PUBLIC_PACKAGE_ID=<your_package_id>
+```
+
+5. Run development server:
+```bash
+npm run dev
+```
+
+6. Open browser at `http://localhost:3000`
 
 ### Using the Smart Contracts
 
@@ -244,7 +314,12 @@ Supported categories (extensible):
 - [x] AMM trading system
 - [x] Market creation & resolution
 - [x] Position tracking
-- [ ] Frontend implementation
+- [x] Frontend implementation (Next.js 14)
+- [x] Animated landing page
+- [x] Arena gamification system
+- [x] Responsive UI with Tailwind CSS
+- [ ] Smart contract integration with frontend
+- [ ] Wallet connection (Sui Wallet)
 
 ### Phase 2 (Next)
 - [ ] Order book system (limit orders)
@@ -269,10 +344,25 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 MIT License
 
+## 🎨 UI Features
+
+### Landing Page Animations
+- **3D Arrow Effects**: Arrows fly across "How It Works" cards on hover
+- **Marvel-Style Logo Animation**: SUI water droplet logos fly across the CTA section
+- **Smooth Transitions**: All animations use CSS3 transforms for optimal performance
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
+
+### Technology Stack
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS, CSS-in-JS for animations
+- **Blockchain**: Sui Move, @mysten/sui.js
+- **Wallet**: Sui Wallet Kit integration (planned)
+
 ## 🔗 Resources
 
 - [Sui Documentation](https://docs.sui.io/)
 - [Sui Move by Example](https://examples.sui.io/)
+- [Next.js Documentation](https://nextjs.org/docs)
 - [Polymarket](https://polymarket.com/) (Inspiration)
 - [Prediction Markets Explained](https://en.wikipedia.org/wiki/Prediction_market)
 
